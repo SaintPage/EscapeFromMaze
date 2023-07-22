@@ -200,6 +200,33 @@ public class Mundo extends World
         addObject(bordepeque14,155,575);
         bordepeque bordepeque15 = new bordepeque();
         addObject(bordepeque15,196,575);
+        //-------------
+        BordeV bordeV21 = new BordeV();
+        addObject(bordeV21,150,553);
+        BordeV bordeV22 = new BordeV();
+        addObject(bordeV22,210,551);
 
+        //----------
+        bordepeque bordepeque16 = new bordepeque();
+        addObject(bordepeque16,174,625);
+        bordepeque16.setLocation(159,623);
+        bordepeque bordepeque17 = new bordepeque();
+        addObject(bordepeque17,196,623);
+
+        //--------------
+        Borde1 borde16 = new Borde1();
+        addObject(borde16,95,400);
+
+        //--------
+        BordeVpeque bordeVpeque = new BordeVpeque();
+        addObject(bordeVpeque,153,328);
+        //.....
+        BordeV bordeV23 = new BordeV();
+        addObject(bordeV23,86,334);
+        BordeV bordeV24 = new BordeV();
+        addObject(bordeV24,86,378);
+        //.....
+        bordepeque bordepeque18 = new bordepeque();
+        addObject(bordepeque18,188,346);
     }
 }
