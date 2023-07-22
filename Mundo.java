@@ -228,5 +228,9 @@ public class Mundo extends World
         //.....
         bordepeque bordepeque18 = new bordepeque();
         addObject(bordepeque18,188,346);
+
+        //Jugador:
+        Jp jp = new Jp();
+        addObject(jp,30,272);
     }
 }
