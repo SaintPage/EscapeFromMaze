@@ -10,12 +10,14 @@ public class Jp extends Actor
 {
     public Jp(){
         GreenfootImage image= getImage();
-        image.scale(40,40);   
+        image.scale(40,40);  
+        
     }
     /**
      * Act - do whatever the Jp wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    private GreenfootSound s = new GreenfootSound("video0.MP3"); 
     public void act()
     {
         int dx=0,dy=0;
@@ -26,8 +28,19 @@ public class Jp extends Actor
         
         setLocation(getX() + dx, getY() + dy);
         
+        if (s.isPlaying() == false) {
+            s.playLoop();
+        }
+        
         if (isTouching(Pared.class)){
             setLocation(getX()-dx, getY()-dy);
+        }
+        if (isTouching(win.class)){
+            String x = Greenfoot.ask("VICTORY! Press ok to play again");
+
+                Greenfoot.setWorld(new Mundo());
+                s.stop();
+
         }
 
         // Add your action code here.

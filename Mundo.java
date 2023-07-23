@@ -13,17 +13,22 @@ public class Mundo extends World
      * Constructor for objects of class Mundo.
      * 
      */
+    
+       
+
     public Mundo()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(535, 720, 1); 
         prepare();
+        
     }
     
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
+    
     private void prepare()
     {
         Pared pared = new Pared();
@@ -232,5 +237,11 @@ public class Mundo extends World
         //Jugador:
         Jp jp = new Jp();
         addObject(jp,30,272);
+        
+        // Meta:
+        win w = new win();
+        addObject(w, 510, 400);
+        
+        
     }
 }
