@@ -42,7 +42,14 @@ public class Jp extends Actor
                 s.stop();
 
         }
+        if (isTouching(bot.class)){
+            String x = Greenfoot.ask("DEFEAT! Press ok to play again");
 
+                Greenfoot.setWorld(new Mundo());
+                s.stop();
+
+        }
+        
         // Add your action code here.
     }
 }

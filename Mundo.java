@@ -238,6 +238,11 @@ public class Mundo extends World
         Jp jp = new Jp();
         addObject(jp,30,272);
         
+        bot bt = new bot();
+        addObject(bt, Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));        
+       // while (bt.isTouching(Pared.class)){
+         //   bt.setLocation();
+        //}
         // Meta:
         win w = new win();
         addObject(w, 510, 400);
