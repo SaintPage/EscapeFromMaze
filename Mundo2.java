@@ -1,27 +1,23 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Mundo here.
+ * Write a description of class Mundo2 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Mundo extends World
+public class Mundo2 extends World
 {
 
     /**
-     * Constructor for objects of class Mundo.
+     * Constructor for objects of class Mundo2.
      * 
      */
-    
-       
-
-    public Mundo()
+    public Mundo2()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(535, 720, 1); 
+        super(535, 720, 1);
         prepare();
-        
     }
     
     /**
@@ -48,22 +44,22 @@ public class Mundo extends World
 
         //---------
         BordeV bordeV = new BordeV();
-        addObject(bordeV,425,170);
+        addObject(bordeV,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         BordeV bordeV2 = new BordeV();
-        addObject(bordeV2,425,125);
+        addObject(bordeV2,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
 
         //-----------------
         BordeV bordeV3 = new BordeV();
-        addObject(bordeV3,414,407);
-        bordeV3.setLocation(402,511);
+        addObject(bordeV3,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
+        bordeV3.setLocation(Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
 
         Borde1 borde1 = new Borde1();
         addObject(borde1,207,307);
         borde1.setLocation(145,310);
         Borde1 borde12 = new Borde1();
         addObject(borde12,204,310);
-        borde12.setLocation(181,309);
-        borde1.setLocation(47,309);
+        borde12.setLocation(Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
+        borde1.setLocation(Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         bordeV3.setLocation(223,278);
         BordeV bordeV4 = new BordeV();
         addObject(bordeV4,219,213);
@@ -71,8 +67,8 @@ public class Mundo extends World
         bordeV4.setLocation(224,241);
         bordeV3.setLocation(224,300);
 
-        bordeV3.setLocation(204,285);
-        bordeV4.setLocation(204,247);
+        bordeV3.setLocation(Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
+        bordeV4.setLocation(Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         Borde1 borde13 = new Borde1();
         addObject(borde13,198,160);
         borde13.setLocation(171,150);
@@ -80,78 +76,78 @@ public class Mundo extends World
         borde13.setLocation(165,141);
         Borde1 borde14 = new Borde1();
         addObject(borde14,204,67);
-        borde14.setLocation(189,72);
-        borde13.setLocation(193,131);
+        borde14.setLocation(Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
+        borde13.setLocation(Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         bordepeque bordepeque = new bordepeque();
         addObject(bordepeque,267,407);
         bordepeque.setLocation(381,508);
 
-        bordepeque.setLocation(240,222);
+        bordepeque.setLocation(Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         bordepeque bordepeque2 = new bordepeque();
         addObject(bordepeque2,312,223);
-        bordepeque2.setLocation(279,223);
+        bordepeque2.setLocation(Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         izquierda2.setLocation(11,63);
 
         bordepeque2.setLocation(275,222);
         borde13.setLocation(139,146);
-        borde14.setLocation(172,72);
+        borde14.setLocation(Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         borde13.setLocation(155,146);
-        borde13.setLocation(164,144);
+        borde13.setLocation(Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         BordeV bordeV5 = new BordeV();
         addObject(bordeV5,97,179);
-        bordeV5.setLocation(91,169);
+        bordeV5.setLocation(Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         bordepeque bordepeque3 = new bordepeque();
         addObject(bordepeque3,68,195);
         bordepeque3.setLocation(47,195);
         bordepeque3.setLocation(378,300);
         bordepeque3.setLocation(350,338);
-        bordepeque3.setLocation(243,268);
+        bordepeque3.setLocation(Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         BordeV bordeV6 = new BordeV();
         addObject(bordeV6,92,198);
-        bordeV6.setLocation(91,207);
+        bordeV6.setLocation(Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         bordepeque bordepeque4 = new bordepeque();
         addObject(bordepeque4,56,232);
         bordepeque4.setLocation(25,234);
         bordepeque bordepeque5 = new bordepeque();
         addObject(bordepeque5,25,234);
         bordepeque5.setLocation(22,231);
-        bordepeque4.setLocation(56,234);
+        bordepeque4.setLocation(Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         bordepeque5.setLocation(84,235);
-        bordepeque5.setLocation(20,234);
+        bordepeque5.setLocation(Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         BordeV bordeV7 = new BordeV();
-        addObject(bordeV7,310,200);
+        addObject(bordeV7,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         BordeV bordeV8 = new BordeV();
-        addObject(bordeV8,310,170);
+        addObject(bordeV8,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
 
         //------------
         bordepeque bordepeque6 = new bordepeque();
-        addObject(bordepeque6,470,336);
+        addObject(bordepeque6,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         bordepeque bordepeque7 = new bordepeque();
-        addObject(bordepeque7,413,336);
+        addObject(bordepeque7,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
 
         //--------------
         bordepeque bordepeque8 = new bordepeque();
-        addObject(bordepeque8,470,296);
+        addObject(bordepeque8,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         bordepeque bordepeque9 = new bordepeque();
-        addObject(bordepeque9,434,296);
+        addObject(bordepeque9,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
 
         //----------
         BordeV bordeV9 = new BordeV();
-        addObject(bordeV9,376,360);
+        addObject(bordeV9,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         BordeV bordeV10 = new BordeV();
-        addObject(bordeV10,376,410);
+        addObject(bordeV10,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         BordeV bordeV11 = new BordeV();
-        addObject(bordeV11,376,460);
+        addObject(bordeV11,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
 
         //---------------
         Borde1 borde15 = new Borde1();
-        addObject(borde15,95,465);
+        addObject(borde15,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         bordepeque bordepeque10 = new bordepeque();
-        addObject(bordepeque10,493,555);
+        addObject(bordepeque10,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
 
         //--------
         bordepeque bordepeque11 = new bordepeque();
-        addObject(bordepeque11,341,485);
+        addObject(bordepeque11,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
 
         BordeV bordeV12 = new BordeV();
         addObject(bordeV12,169,598);
@@ -160,93 +156,92 @@ public class Mundo extends World
 
         //------
         BordeV bordeV13 = new BordeV();
-        addObject(bordeV13,343,510);
+        addObject(bordeV13,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         BordeV bordeV14 = new BordeV();
-        addObject(bordeV14,343,530);
+        addObject(bordeV14,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
 
         //-----
         bordepeque bordepeque12 = new bordepeque();
-        addObject(bordepeque12,400,620);
+        addObject(bordepeque12,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         //....
         BordeV bordeV15 = new BordeV();
-        addObject(bordeV15,362,643);
+        addObject(bordeV15,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         BordeV bordeV16 = new BordeV();
-        addObject(bordeV16,362,670);
+        addObject(bordeV16,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
 
         //--------------
         BordeV bordeV17 = new BordeV();
-        addObject(bordeV17,475,530);
+        addObject(bordeV17,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         BordeV bordeV18 = new BordeV();
         addObject(bordeV18,461,473);
-        bordeV18.setLocation(475,486);
+        bordeV18.setLocation(Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
 
         //----------
         bordepeque bordepeque13 = new bordepeque();
         addObject(bordepeque13,418,431);
-        bordepeque13.setLocation(412,370);
+        bordepeque13.setLocation(Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
 
         derecha.setLocation(524,187);
         //-.-----
 
         bordemas bordemas = new bordemas();
-        addObject(bordemas,400,420);
+        addObject(bordemas,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         //---
         bordemas bordemas2 = new bordemas();
-        addObject(bordemas2,455,515);
+        addObject(bordemas2,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
 
         //---------------------
         BordeV bordeV19 = new BordeV();
-        addObject(bordeV19,119,650);
+        addObject(bordeV19,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         BordeV bordeV20 = new BordeV();
-        addObject(bordeV20,119,600);
+        addObject(bordeV20,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
 
         //-------------
         bordepeque bordepeque14 = new bordepeque();
-        addObject(bordepeque14,155,575);
+        addObject(bordepeque14,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         bordepeque bordepeque15 = new bordepeque();
-        addObject(bordepeque15,196,575);
+        addObject(bordepeque15,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         //-------------
         BordeV bordeV21 = new BordeV();
-        addObject(bordeV21,150,553);
+        addObject(bordeV21,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         BordeV bordeV22 = new BordeV();
-        addObject(bordeV22,210,551);
+        addObject(bordeV22,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
 
         //----------
         bordepeque bordepeque16 = new bordepeque();
         addObject(bordepeque16,174,625);
-        bordepeque16.setLocation(159,623);
+        bordepeque16.setLocation(Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         bordepeque bordepeque17 = new bordepeque();
-        addObject(bordepeque17,196,623);
+        addObject(bordepeque17,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
 
         //--------------
         Borde1 borde16 = new Borde1();
-        addObject(borde16,95,400);
+        addObject(borde16,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
 
         //--------
         BordeVpeque bordeVpeque = new BordeVpeque();
-        addObject(bordeVpeque,153,328);
+        addObject(bordeVpeque,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         //.....
         BordeV bordeV23 = new BordeV();
-        addObject(bordeV23,86,334);
+        addObject(bordeV23,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         BordeV bordeV24 = new BordeV();
-        addObject(bordeV24,86,378);
+        addObject(bordeV24,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
         //.....
         bordepeque bordepeque18 = new bordepeque();
-        addObject(bordepeque18,188,346);
+        addObject(bordepeque18,Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));
 
         //Jugador:
         Jp jp = new Jp();
         addObject(jp,30,272);
         
         bot bt = new bot();
-        addObject(bt, 80,600);        
-       // while (bt.isTouching(Pared.class)){
-         //   bt.setLocation();
-        //}
+        addObject(bt, Greenfoot.getRandomNumber(535), Greenfoot.getRandomNumber(720));        
+       
         // Meta:
         win w = new win();
         addObject(w, 510, 400);
         
         
     }
+
 }

@@ -36,11 +36,14 @@ public class Jp extends Actor
             setLocation(getX()-dx, getY()-dy);
         }
         if (isTouching(win.class)){
-            String x = Greenfoot.ask("VICTORY! Press ok to play again");
-
-                Greenfoot.setWorld(new Mundo());
+            String x = Greenfoot.ask("VICTORY! Press ok to play again.");
+                
+                if ("random".equals(x)) {
+                Greenfoot.setWorld(new Mundo2());
                 s.stop();
-
+            }
+            Greenfoot.setWorld(new Mundo());
+            s.stop();
         }
         if (isTouching(bot.class)){
             String x = Greenfoot.ask("DEFEAT! Press ok to play again");
