@@ -28,7 +28,7 @@ public class Mundo extends World
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
-    
+
     private void prepare()
     {
         Pared pared = new Pared();
@@ -237,16 +237,17 @@ public class Mundo extends World
         //Jugador:
         Jp jp = new Jp();
         addObject(jp,30,272);
-        
+
         bot bt = new bot();
         addObject(bt, 80,600);        
-       // while (bt.isTouching(Pared.class)){
-         //   bt.setLocation();
+        // while (bt.isTouching(Pared.class)){
+        //   bt.setLocation();
         //}
         // Meta:
         win w = new win();
         addObject(w, 510, 400);
-        
-        
+
+        image image = new image();
+        addObject(image,274,372);
     }
 }

@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.lang.Thread;
 /**
  * Write a description of class Jp here.
  * 
@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Jp extends Actor
 {
+    image scream = new image();
+    GifImage myGif = new GifImage("scream.gif");
     public Jp(){
         GreenfootImage image= getImage();
         image.scale(40,40);  
@@ -46,10 +48,16 @@ public class Jp extends Actor
             s.stop();
         }
         if (isTouching(bot.class)){
+            image myScream = getWorld().getObjects(image.class).get(0);
+            myScream.getImage().setTransparency(255);
+            myScream.setImage( myGif.getCurrentImage());
+            myScream.getImage().scale(535, 720);
+            
+            Greenfoot.delay(2000);            
             String x = Greenfoot.ask("DEFEAT! Press ok to play again");
 
-                Greenfoot.setWorld(new Mundo());
-                s.stop();
+            Greenfoot.setWorld(new Mundo());
+            s.stop();
 
         }
         
