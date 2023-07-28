@@ -249,5 +249,11 @@ public class Mundo extends World
 
         image image = new image();
         addObject(image,274,372);
+        food food = new food();
+        addObject(food,44,197);
+        food food2 = new food();
+        addObject(food2,427,662);
+        food food3 = new food();
+        addObject(food3,58,426);
     }
 }
