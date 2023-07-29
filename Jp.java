@@ -49,7 +49,7 @@ public class Jp extends Actor
             String x = Greenfoot.ask("VICTORY! Press ok to play again.");
                 
                 if ("random".equals(x)) {
-                Greenfoot.setWorld(new Mundo2());
+                Greenfoot.setWorld(new Automatic());
                 s.stop();
             }
             Greenfoot.setWorld(new Automatic());

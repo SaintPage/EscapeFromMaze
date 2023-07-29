@@ -79,6 +79,8 @@ public class Automatic extends World
                 break;
             }
         }
+        win victory = getObjects(win.class).get(0);
+        victory.getImage().setTransparency(255);
     }
     private void NextWall(){
         ;
