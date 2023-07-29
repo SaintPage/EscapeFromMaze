@@ -255,5 +255,16 @@ public class Mundo extends World
         addObject(food2,427,662);
         food food3 = new food();
         addObject(food3,58,426);
+        food2.setLocation(462,669);
+        removeObject(food2);
+        food3.setLocation(73,448);
+        removeObject(food3);
+        food.setLocation(43,209);
+        removeObject(food);
+        addObject(food3,82,429);
+        food food4 = new food();
+        addObject(food4,453,649);
+        food food5 = new food();
+        addObject(food5,46,201);
     }
 }

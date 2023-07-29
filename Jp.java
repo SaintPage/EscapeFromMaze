@@ -18,7 +18,6 @@ public class Jp extends Actor
         GreenfootImage image= getImage();
         image.scale(40,40);  
         s.setVolume(20);
-        s.play();
         lose.setVolume(30);
         lose.stop();
     }
@@ -29,6 +28,7 @@ public class Jp extends Actor
     
     public void act()
     {
+        s.play();
         int dx=0,dy=0;
         if(Greenfoot.isKeyDown("d")) dx=1;
         if(Greenfoot.isKeyDown("a")) dx=-1;
@@ -60,16 +60,17 @@ public class Jp extends Actor
             counter++;
         }
         if (isTouching(bot.class)){
+            getWorld().removeObjects(getWorld().getObjects(food.class));
             s.stop();
             lose.play();
 
             image myScream = getWorld().getObjects(image.class).get(0);
             myScream.getImage().setTransparency(255);
             myScream.setImage( myGif.getCurrentImage());
-            myScream.getImage().scale(535, 720);
+            myScream.getImage().scale(590, 790);
             
             
-            Greenfoot.delay(2000);   
+            Greenfoot.delay(1580);   
             lose.stop();
             String x = Greenfoot.ask("DEFEAT! Press ok to play again");
 
