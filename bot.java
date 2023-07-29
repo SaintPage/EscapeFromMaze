@@ -17,7 +17,7 @@ public class bot extends Actor
     public void act()
     {
         // Add your action code here.
-        
+       
         if (r == 0){
             dx =1;
         }
@@ -39,7 +39,7 @@ public class bot extends Actor
         if (isTouching(Pared.class) && (dy != 0)){
             setLocation(getX(), getY()-dy);
             r = Greenfoot.getRandomNumber(4);
+            
         }
-        
     }
 }

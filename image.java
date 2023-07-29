@@ -1,18 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class win here.
+ * Write a description of class abeja here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class win extends Actor
+public class image extends Actor
 {
-    public win(){
+    public image(){
         getImage().setTransparency(0);
     }
     /**
-     * Act - do whatever the win wants to do. This method is called whenever
+     * Act - do whatever the abeja wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
