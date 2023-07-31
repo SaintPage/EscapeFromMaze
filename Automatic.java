@@ -41,6 +41,26 @@ public class Automatic extends World
         addObject(izquierda1,16,510);
         derecha.setLocation(524,187);
         
+        image image = new image();
+        addObject(image,274,372);
+        food food = new food();
+        addObject(food,44,197);
+        food food2 = new food();
+        addObject(food2,427,662);
+        food food3 = new food();
+        addObject(food3,58,426);
+        food2.setLocation(462,669);
+        removeObject(food2);
+        food3.setLocation(73,448);
+        removeObject(food3);
+        food.setLocation(43,209);
+        removeObject(food);
+        addObject(food3,82,429);
+        food food4 = new food();
+        addObject(food4,453,649);
+        food food5 = new food();
+        addObject(food5,46,201);
+        
         addObject(new Jp(), 59, 90*cy +45);
         
         for (int[] i: m) {
@@ -61,10 +81,10 @@ public class Automatic extends World
                   //  if (l == y - 1){
                     //    break;
                     //}
-                    if (l+1 < y && k +1 < x && l - 1 >= 0 && k - 1>= 0){
-                    if (j == 0 && (m[k][l + 1] == 1 || m[k][l - 1] == 1 || m[k +1][l] == 1 || m[k - 1][l + 1] == 1)){
+                    
+                    if (j == 0){
                         
-                        int o = 0, p = 0;
+                        int o = -1, p = -1;
                         cx = k; cy = l;
                         if (l + 1 < y){
                         if (m[k][l + 1] == 1){
@@ -90,13 +110,15 @@ public class Automatic extends World
                         if (m[k - 1][l] == 1 && m[k + 1][l] == 1){
                             o = Greenfoot.getRandomNumber(2);
                         }}
+                        if (!(o == -1 || p == -1)){
                         removeObjects(getObjectsAt(90*o, 90*p, Pared.class));
                         NextWall();
                         brk = true;
+                    }
                         break;
                     }
                     l ++;
-                }}
+                }
                 if (brk){
                     break;
                 }
