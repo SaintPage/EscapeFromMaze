@@ -34,7 +34,7 @@ public class Jp extends Actor
         if(Greenfoot.isKeyDown("a")) dx=-1;
         if(Greenfoot.isKeyDown("w")) dy=-1;
         if(Greenfoot.isKeyDown("s")) dy=1;
-        System.out.println(""+getWorld());
+        //System.out.println(""+getWorld());
         setLocation(getX() + dx, getY() + dy);
         
         if (s.isPlaying() == false) {
