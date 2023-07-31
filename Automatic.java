@@ -61,14 +61,42 @@ public class Automatic extends World
                   //  if (l == y - 1){
                     //    break;
                     //}
-                    if (j == 0){
+                    if (l+1 < y && k +1 < x && l - 1 >= 0 && k - 1>= 0){
+                    if (j == 0 && (m[k][l + 1] == 1 || m[k][l - 1] == 1 || m[k +1][l] == 1 || m[k - 1][l + 1] == 1)){
+                        
+                        int o = 0, p = 0;
                         cx = k; cy = l;
+                        if (l + 1 < y){
+                        if (m[k][l + 1] == 1){
+                            p = 1;
+                        }}
+                        if (l - 1 >= 0){
+                        if (m[k][l - 1] == 1){
+                            p = 0;
+                        }}
+                        if (l - 1 >= 0 && l + 1 < y){
+                        if (m[k][l + 1] == 1 && m[k][l - 1] == 1){
+                            p = Greenfoot.getRandomNumber(2);
+                        }}
+                        if (k + 1 < x){
+                        if (m[k + 1][l] == 1){
+                            o = 1;
+                        }}
+                        if (k - 1 >= 0){
+                        if (m[k - 1][l] == 1){
+                            o = 0;
+                        }}
+                        if (k - 1 >= 0 && k + 1 < x){
+                        if (m[k - 1][l] == 1 && m[k + 1][l] == 1){
+                            o = Greenfoot.getRandomNumber(2);
+                        }}
+                        removeObjects(getObjectsAt(90*o, 90*p, Pared.class));
                         NextWall();
                         brk = true;
                         break;
                     }
                     l ++;
-                }
+                }}
                 if (brk){
                     break;
                 }
