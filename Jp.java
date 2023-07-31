@@ -34,7 +34,7 @@ public class Jp extends Actor
         if(Greenfoot.isKeyDown("a")) dx=-1;
         if(Greenfoot.isKeyDown("w")) dy=-1;
         if(Greenfoot.isKeyDown("s")) dy=1;
-        
+        System.out.println(""+getWorld());
         setLocation(getX() + dx, getY() + dy);
         
         if (s.isPlaying() == false) {
@@ -44,22 +44,25 @@ public class Jp extends Actor
         if (isTouching(Pared.class)){
             setLocation(getX()-dx, getY()-dy);
         }
-        if (isTouching(win.class) && counter == 3){
+        if (getWorld().getWidth() == 536){
+        if (isTouching(win.class) && (counter == 3 || getWorldOfType(Automatic.class).Lvl == 1)){
             
-            String x = Greenfoot.ask("VICTORY! Press ok to play again.");
+            if (getWorldOfType(Automatic.class).Lvl < 4){
+            String x = Greenfoot.ask("VICTORY! Press ok to play again in the next level.");
                 
-                if ("random".equals(x)) {
-                Greenfoot.setWorld(new Automatic());
-                s.stop();
+                //if ("random".equals(x)) {
+               // Greenfoot.setWorld(new Automatic());
+             //   s.stop();
+          //  }
+            Greenfoot.setWorld(new Automatic(getWorldOfType(Automatic.class).Lvl + 1));}
+            else {
+                String x = Greenfoot.ask("VICTORY! Press ok to play again in the first level.");
+               
+            Greenfoot.setWorld(new Automatic(1));
             }
-            Greenfoot.setWorld(new Automatic());
             s.stop();
         }
-        if (isTouching(food.class)){
-            getWorld().removeObjects(getObjectsInRange(100, food.class));
-            counter++;
-        }
-        if (isTouching(bot.class) && !(counter == 3)){
+        if (isTouching(bot.class)){
             getWorld().removeObjects(getWorld().getObjects(food.class));
             s.stop();
             lose.play();
@@ -74,9 +77,43 @@ public class Jp extends Actor
             lose.stop();
             String x = Greenfoot.ask("DEFEAT! Press ok to play again");
 
-            Greenfoot.setWorld(new Automatic());
+            Greenfoot.setWorld(new Automatic(getWorldOfType(Automatic.class).Lvl));
             
         }
+        if (counter == 3 || getWorldOfType(Automatic.class).Lvl == 1){
+            win victory = getWorld().getObjects(win.class).get(0);
+            victory.getImage().setTransparency(255);
+        }
+    }
+        else{
+            if (isTouching(win.class) && counter == 3){
+                String x = Greenfoot.ask("VICTORY! Press ok to play again.");
+                Greenfoot.setWorld(new Mundo());
+            }
+            if (isTouching(bot.class)){
+            getWorld().removeObjects(getWorld().getObjects(food.class));
+            s.stop();
+            lose.play();
+
+            image myScream = getWorld().getObjects(image.class).get(0);
+            myScream.getImage().setTransparency(255);
+            myScream.setImage( myGif.getCurrentImage());
+            myScream.getImage().scale(590, 790);
+            
+            
+            Greenfoot.delay(1580);   
+            lose.stop();
+            String x = Greenfoot.ask("DEFEAT! Press ok to play again");
+
+            Greenfoot.setWorld(new Mundo());
+            
+        }
+        }
+        if (isTouching(food.class)){
+            getWorld().removeObjects(getObjectsInRange(70, food.class));
+            counter++;
+        }
+        
         if (counter == 3){
             win victory = getWorld().getObjects(win.class).get(0);
             victory.getImage().setTransparency(255);

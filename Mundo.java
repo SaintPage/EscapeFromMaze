@@ -46,6 +46,7 @@ public class Mundo extends World
         Izquierda1 izquierda1 = new Izquierda1();
         addObject(izquierda1,16,510);
 
+
         //---------
         BordeV bordeV = new BordeV();
         addObject(bordeV,425,170);

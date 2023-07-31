@@ -13,12 +13,16 @@ public class Automatic extends World
      * Constructor for objects of class Automatic.
      * 
      */
-    public Automatic()
+    public int Lvl = 1;
+    public Automatic(int lvl)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(535, 720, 1); 
-        prepare();
+        super(536, 720, 1); 
+        Lvl = lvl;
+        prepare(lvl);
+        addObject(new image(), 274, 372);
     }
+    
     private int x = 5;
     private int y = 8;
     private int cx = 0;
@@ -32,7 +36,7 @@ public class Automatic extends World
         return y;
     }
     
-    private void prepare() {
+    private void prepare(int lvl) {
         Pared pared = new Pared();
         addObject(pared,267,15);
         Derecha derecha = new Derecha();
@@ -47,9 +51,12 @@ public class Automatic extends World
         Izquierda1 izquierda1 = new Izquierda1();
         addObject(izquierda1,16,510);
         derecha.setLocation(524,187);
+        addObject(new Izquierda1(), 1, 200);
+        addObject(new Derecha(), 720, 450);
         
-        image image = new image();
-        addObject(image,90*Greenfoot.getRandomNumber(x) + 45,90*Greenfoot.getRandomNumber(y) + 45);
+        if (lvl >= 2){
+     //   image image = new image();
+       // addObject(image,90*Greenfoot.getRandomNumber(x) + 45,90*Greenfoot.getRandomNumber(y) + 45);
         food food = new food();
         addObject(food,44,197);
         food food2 = new food();
@@ -67,11 +74,17 @@ public class Automatic extends World
         addObject(food4,45+90*Greenfoot.getRandomNumber(x),90*Greenfoot.getRandomNumber(y) +45);
         food food5 = new food();
         addObject(food5,90*Greenfoot.getRandomNumber(x) + 45,45+90*Greenfoot.getRandomNumber(y));
-        
+    }
         addObject(new Jp(), 59, 90*cy +45);
+        if (lvl >= 3){
         bot bot = new bot();
-        addObject(bot, 90*Greenfoot.getRandomNumber(x) + 45,45+90*Greenfoot.getRandomNumber(y));
-        
+        addObject(bot, 90*(Greenfoot.getRandomNumber(x -2)+ 1) + 45,45+90*(Greenfoot.getRandomNumber(y-2) + 1));
+    }
+    if (lvl >= 4){
+        bot bot2 = new bot();
+        addObject(bot2, 90*(Greenfoot.getRandomNumber(x -2)+ 1) + 45,45+90*(Greenfoot.getRandomNumber(y-2) + 1));
+    }
+    
         for (int[] i: m) {
             for (int j: i){
                 j = 0;
@@ -132,7 +145,7 @@ public class Automatic extends World
                         }}}
                         if (!(o == 45 && p == 45)){
                         cx = k; cy = l;
-                        System.out.println(""+ cx + cy + pr);
+                        //System.out.println(""+ cx + cy + pr);
                         
                         
                         removeObjects(getObjectsAt(90*(k)+o, 90*(l)+p, Pared.class));
