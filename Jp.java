@@ -59,7 +59,7 @@ public class Jp extends Actor
             getWorld().removeObjects(getObjectsInRange(100, food.class));
             counter++;
         }
-        if (isTouching(bot.class)){
+        if (isTouching(bot.class) && !(counter == 3)){
             getWorld().removeObjects(getWorld().getObjects(food.class));
             s.stop();
             lose.play();

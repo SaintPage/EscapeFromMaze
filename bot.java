@@ -14,21 +14,24 @@ public class bot extends Actor
      */
     int r = Greenfoot.getRandomNumber(4);
     int dx=0,dy=0;
+    //int X = getX(); 
+    //int Y = getY();
     public void act()
     {
         // Add your action code here.
-       
+        
         if (r == 0){
             dx =1;
+            dy = 0;
         }
         if (r == 1){
-            dx = -1;
+            dx = -1;dy=0;
         }
         if (r == 2){
-            dy =1;
+            dy =1;dx=0;
         }
         if (r == 3){
-            dy = -1;
+            dy = -1;dx=0;
         }
         setLocation(getX() + dx, getY() + dy);
         
@@ -41,5 +44,7 @@ public class bot extends Actor
             r = Greenfoot.getRandomNumber(4);
             
         }
+        
+        
     }
 }

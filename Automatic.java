@@ -25,6 +25,13 @@ public class Automatic extends World
     private int cy = 1 + Greenfoot.getRandomNumber(y - 2);
     private int[][] m = new int[x][y];
     
+    public int getX() {
+        return x;
+    }
+    public int getY() {
+        return y;
+    }
+    
     private void prepare() {
         Pared pared = new Pared();
         addObject(pared,267,15);
@@ -42,7 +49,7 @@ public class Automatic extends World
         derecha.setLocation(524,187);
         
         image image = new image();
-        addObject(image,274,372);
+        addObject(image,90*Greenfoot.getRandomNumber(x) + 45,90*Greenfoot.getRandomNumber(y) + 45);
         food food = new food();
         addObject(food,44,197);
         food food2 = new food();
@@ -55,13 +62,15 @@ public class Automatic extends World
         removeObject(food3);
         food.setLocation(43,209);
         removeObject(food);
-        addObject(food3,82,429);
+        addObject(food3,90*Greenfoot.getRandomNumber(x) + 45, 90*Greenfoot.getRandomNumber(y) + 45);
         food food4 = new food();
-        addObject(food4,453,649);
+        addObject(food4,45+90*Greenfoot.getRandomNumber(x),90*Greenfoot.getRandomNumber(y) +45);
         food food5 = new food();
-        addObject(food5,46,201);
+        addObject(food5,90*Greenfoot.getRandomNumber(x) + 45,45+90*Greenfoot.getRandomNumber(y));
         
         addObject(new Jp(), 59, 90*cy +45);
+        bot bot = new bot();
+        addObject(bot, 90*Greenfoot.getRandomNumber(x) + 45,45+90*Greenfoot.getRandomNumber(y));
         
         for (int[] i: m) {
             for (int j: i){
@@ -69,7 +78,7 @@ public class Automatic extends World
             }
         }
         
-        NextWall();
+        NextWall(1);
         addObject(new win(), 90*cx +45, 90*cy +45);
         
         while (true) {
@@ -84,38 +93,54 @@ public class Automatic extends World
                     
                     if (j == 0){
                         
-                        int o = -1, p = -1;
-                        cx = k; cy = l;
+                        int o = 45, p = 45, pr = 1, des = 0;
+ //                       if ((m[k][l + 1] == 1 || m[k][l - 1] == 1) && !(m[k - 1][l] == 1 || m[k + 1][l] == 1)){
+   //                         des = 1;
+     //                   }
+       //                 if (!(m[k][l + 1] == 1 || m[k][l - 1] == 1) && (m[k - 1][l] == 1 || m[k + 1][l] == 1)){
+         //                   des = 0;
+           //             }
+                        //if ((m[k][l + 1] == 1 || m[k][l - 1] == 1) && (m[k - 1][l] == 1 || m[k + 1][l] == 1)){
+                            des = Greenfoot.getRandomNumber(2);
+             //           }
+                        if (des == 1){
                         if (l + 1 < y){
                         if (m[k][l + 1] == 1){
-                            p = 1;
+                            p = 1*90; pr = 2;
                         }}
                         if (l - 1 >= 0){
                         if (m[k][l - 1] == 1){
-                            p = 0;
+                            p = 0; pr = 3;
                         }}
                         if (l - 1 >= 0 && l + 1 < y){
                         if (m[k][l + 1] == 1 && m[k][l - 1] == 1){
-                            p = Greenfoot.getRandomNumber(2);
-                        }}
+                            p = Greenfoot.getRandomNumber(2)*90;
+                            pr = 2 + (p/90-1)*-1;
+                        }}}
+                        if (des == 0){
                         if (k + 1 < x){
                         if (m[k + 1][l] == 1){
-                            o = 1;
+                            o = 90; pr = 0;
                         }}
                         if (k - 1 >= 0){
                         if (m[k - 1][l] == 1){
-                            o = 0;
+                            o = 0; pr = 1;
                         }}
                         if (k - 1 >= 0 && k + 1 < x){
                         if (m[k - 1][l] == 1 && m[k + 1][l] == 1){
-                            o = Greenfoot.getRandomNumber(2);
-                        }}
-                        if (!(o == -1 || p == -1)){
-                        removeObjects(getObjectsAt(90*o, 90*p, Pared.class));
-                        NextWall();
+                            o = Greenfoot.getRandomNumber(2)*90;pr=(o/90-1)*-1;
+                        }}}
+                        if (!(o == 45 && p == 45)){
+                        cx = k; cy = l;
+                        System.out.println(""+ cx + cy + pr);
+                        
+                        
+                        removeObjects(getObjectsAt(90*(k)+o, 90*(l)+p, Pared.class));
+                        NextWall(pr);
                         brk = true;
-                    }
                         break;
+                    }
+                        
                     }
                     l ++;
                 }
@@ -132,11 +157,11 @@ public class Automatic extends World
         win victory = getObjects(win.class).get(0);
         victory.getImage().setTransparency(255);
     }
-    private void NextWall(){
+    private void NextWall(int prev){
         ;
         int[] moves = {0, 0, 0, 0};
         boolean keep = true;
-        int prev = 1;
+        
         
         do {
             m[cx][cy] = 1;
