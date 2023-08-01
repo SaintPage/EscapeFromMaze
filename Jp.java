@@ -16,7 +16,7 @@ public class Jp extends Actor
     
     public Jp(){
         GreenfootImage image= getImage();
-        image.scale(40,40);  
+        image.scale(50,50);  
         s.setVolume(20);
         lose.setVolume(30);
         lose.stop();
